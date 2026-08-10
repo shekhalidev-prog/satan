@@ -1,0 +1,71 @@
+const roman = [
+  'I','II','III','IV','V','VI','VII','VIII','IX','X',
+  'XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX',
+  'XXI','XXII','XXIII','XXIV','XXV','XXVI','XXVII','XXVIII','XXIX','XXX',
+  'XXXI','XXXII','XXXIII','XXXIV','XXXV','XXXVI','XXXVII','XXXVIII','XXXIX','XL',
+  'XLI','XLII','XLIII','XLIV','XLV','XLVI','XLVII','XLVIII'
+]
+
+// Titles are the well-known short law names from "The 48 Laws of Power".
+// Taglines are original one-line framings written for this app (not quoted text).
+const titles = [
+  ['Never Outshine the Master', 'Let those above you feel comfortably superior.'],
+  ['Never Put Too Much Trust in Friends, Learn How to Use Enemies', 'Loyalty is not the same as usefulness.'],
+  ['Conceal Your Intentions', 'Smoke hides the blade until it is too late.'],
+  ['Always Say Less Than Necessary', 'Silence carries weight words cannot.'],
+  ['So Much Depends on Reputation — Guard It with Your Life', 'A name is a weapon and a shield.'],
+  ['Court Attention at All Cost', 'To be forgotten is a kind of death.'],
+  ['Get Others to Do the Work for You, but Always Take the Credit', 'Effort is cheap; credit is currency.'],
+  ['Make Other People Come to You — Use Bait if Necessary', 'The one who waits controls the field.'],
+  ['Win Through Your Actions, Never Through Argument', 'A result silences a thousand arguments.'],
+  ['Infection: Avoid the Unhappy and Unlucky', 'Misfortune spreads like plague through proximity.'],
+  ['Learn to Keep People Dependent on You', 'Indispensability is the truest form of security.'],
+  ['Use Selective Honesty and Generosity to Disarm Your Victim', 'One true gift buys many lies.'],
+  ['When Asking for Help, Appeal to People\u2019s Self-Interest, Never to Their Mercy or Gratitude', 'Self-interest is the only reliable ally.'],
+  ['Pose as a Friend, Work as a Spy', 'Closeness is the best vantage point.'],
+  ['Crush Your Enemy Totally', 'An ember left burning will return as fire.'],
+  ['Use Absence to Increase Respect and Honor', 'Scarcity breeds reverence.'],
+  ['Keep Others in Suspended Terror: Cultivate an Air of Unpredictability', 'The predictable are the first to be mastered.'],
+  ['Do Not Build Fortresses to Protect Yourself — Isolation Is Dangerous', 'Walls that keep enemies out keep allies away too.'],
+  ['Know Who You\u2019re Dealing With — Do Not Offend the Wrong Person', 'Know your prey before you strike.'],
+  ['Do Not Commit to Anyone', 'The uncommitted hand can play every card.'],
+  ['Play a Sucker to Catch a Sucker — Seem Dumber Than Your Mark', 'The fool\u2019s mask hides the sharpest mind.'],
+  ['Use the Surrender Tactic: Transform Weakness into Power', 'To yield at the right moment is to win later.'],
+  ['Concentrate Your Forces', 'A single blade cuts deeper than a scattered blow.'],
+  ['Play the Perfect Courtier', 'Grace is its own kind of power.'],
+  ['Re-Create Yourself', 'Those who script their own myth cannot be written by others.'],
+  ['Keep Your Hands Clean', 'Let others wield the blade in your name.'],
+  ['Play on People\u2019s Need to Believe to Create a Cultlike Following', 'Faith is the most obedient of followers.'],
+  ['Enter Action with Boldness', 'Hesitation is a scent predators can smell.'],
+  ['Plan All the Way to the End', 'The ending, not the opening, decides the victor.'],
+  ['Make Your Accomplishments Seem Effortless', 'Struggle shown is power diminished.'],
+  ['Control the Options: Get Others to Play with the Cards You Deal', 'Choice offered is still a cage you built.'],
+  ['Play to People\u2019s Fantasies', 'Truth informs; illusion seduces.'],
+  ['Discover Each Man\u2019s Thumbscrew', 'Every soul has a hidden lever.'],
+  ['Be Royal in Your Own Fashion: Act like a King to Be Treated Like One', 'Bearing commands respect before words do.'],
+  ['Master the Art of Timing', 'The same act, at the wrong hour, is ruin.'],
+  ['Disdain Things You Cannot Have: Ignoring Them Is the Best Revenge', 'Hunger given no audience starves.'],
+  ['Create Compelling Spectacles', 'Illusion dazzles where substance goes unnoticed.'],
+  ['Think as You Like but Behave Like Others', 'The mask of conformity protects the mind beneath it.'],
+  ['Assess People\u2019s Weaknesses', 'A crack in armor is an invitation.'],
+  ['Do Not Go Past the Mark You Aimed For; in Victory, Learn When to Stop', 'Excess in triumph breeds the fall.'],
+  ['Despise the Free Lunch', 'What costs nothing binds you the deepest.'],
+  ['Avoid Stepping into a Great Man\u2019s Shoes', 'A shadow cast by giants swallows successors.'],
+  ['Strike the Shepherd and the Sheep Will Scatter', 'Remove the source, and the trouble unravels.'],
+  ['Work on the Hearts and Minds of Others', 'Force compels; persuasion converts.'],
+  ['Disarm and Infuriate with the Mirror Effect', 'Reflection is the cruelest of weapons.'],
+  ['Preach the Need for Change, but Never Reform Too Much at Once', 'The old order fears sudden ash.'],
+  ['Never Appear Too Perfect', 'Envy is a blade aimed at the flawless.'],
+  ['Do Not Go Against the Grain of the World: Fit in and Gauge Popular Taste', 'To swim against the tide is to drown loudly.'],
+  ['Assume Formlessness', 'What has no shape cannot be struck.'],
+]
+
+export const laws = titles.map(([title, tagline], i) => ({
+  id: i + 1,
+  numeral: roman[i],
+  title,
+  tagline,
+  slug: `law-${i + 1}`,
+}))
+
+export const getLawById = (id) => laws.find((l) => l.id === Number(id))

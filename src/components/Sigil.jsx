@@ -1,0 +1,17 @@
+export default function Sigil({ className = 'w-10 h-10', animate = false }) {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      className={`${className} ${animate ? 'animate-flicker' : ''}`}
+      fill="none"
+      aria-hidden="true"
+    >
+      <circle cx="50" cy="50" r="46" className="sigil-line" strokeWidth="1.5" />
+      <polygon
+        points="50,8 61,38 93,38 67,57 77,88 50,69 23,88 33,57 7,38 39,38"
+        className="sigil-line"
+        strokeWidth="1.2"
+      />
+    </svg>
+  )
+}
